@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<project basedir="." default="compile">
+
+    <property name="build" value="build"/>
+    <property name="src" value="."/>
+    <property name="lib" value="lib"/>
+
+    <path id="build-classpath">
+        <fileset dir="${lib}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="compile" depends="init">
+        <javac destdir="${build}" includeantruntime="false">
+            <src path="${src}"/>
+            <classpath refid="build-classpath"/>
+        </javac>
+    </target>
+
+    <target name="init">
+        <mkdir dir="${build}"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build}"/>
+    </target>
+
+</project>

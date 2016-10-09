@@ -1,0 +1,4 @@
+*.pyc
+.idea
+hhsmartmirror
+.DS_Store
