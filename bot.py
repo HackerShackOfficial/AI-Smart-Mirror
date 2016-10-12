@@ -16,6 +16,7 @@ from vision import Vision
 
 my_name = "Aaron"
 launch_phrase = "ok mirror"
+use_launch_phrase = True
 weather_api_token = "<weather_token>"
 wit_ai_token = "<wit.ai_token>"
 debugger_enabled = True
@@ -38,9 +39,12 @@ class Bot(object):
             requests.get("http://localhost:8080/clear")
             if self.vision.recognize_face():
                 print "Found face"
-                recognizer, audio = self.speech.listen_for_audio()
-                if self.speech.is_call_to_action(recognizer, audio):
-                    self.__acknowledge_action()
+                if use_launch_phrase:
+                    recognizer, audio = self.speech.listen_for_audio()
+                    if self.speech.is_call_to_action(recognizer, audio):
+                        self.__acknowledge_action()
+                        self.decide_action()
+                else:
                     self.decide_action()
 
     def decide_action(self):
