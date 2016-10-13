@@ -1,6 +1,9 @@
 # AI-Smart-Mirror
 Smart Mirror with a smart AI 🤖
 
+Watch the video on how to make it here:
+https://youtu.be/ejnE6DM-hqU
+
 # Setup Guide
 
 ## Magic Mirror
