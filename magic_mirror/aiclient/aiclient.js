@@ -112,7 +112,7 @@ Module.register("aiclient",{
 				title.className = "large bright";
 				title.style.margin = "10px"
 
-				var date = new Date(this.holiday.date.year, this.holiday.date.month, this.holiday.date.month)
+				var date = new Date(this.holiday.date.year, this.holiday.date.month - 1, this.holiday.date.month)
 
 				var subtitle = document.createElement('div')
 				subtitle.innerHTML = date.toDateString()
